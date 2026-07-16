@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111111">
+  <title>啵比星球 AR 合照</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <video id="camera" autoplay playsinline muted></video>
+    <canvas id="captureCanvas" hidden></canvas>
+
+    <section id="loading" class="screen">
+      <div class="loader"></div>
+      <h1>啵比星球</h1>
+      <p>正在召喚啵比...</p>
+      <button id="startBtn">開啟相機開始體驗</button>
+    </section>
+
+    <section id="stage" class="hidden">
+      <div id="sparkles" aria-hidden="true">✦ ✧ ✦</div>
+      <div id="bobiWrap">
+        <img id="bobi" src="assets/bobi.png" alt="啵比">
+        <div id="speech">嗨！歡迎來到啵比星球！</div>
+      </div>
+
+      <div id="hint">拖曳啵比移動位置・雙指縮放</div>
+
+      <nav id="controls">
+        <button id="waveBtn">👋 揮手</button>
+        <button id="heartBtn">❤️ 愛心</button>
+        <button id="photoBtn" class="primary">📷 拍照</button>
+        <button id="resetBtn">↺ 重置</button>
+      </nav>
+    </section>
+
+    <section id="countdown" class="hidden"></section>
+
+    <section id="result" class="screen hidden">
+      <img id="photoResult" alt="AR 合照成果">
+      <div class="resultButtons">
+        <a id="downloadBtn" download="啵比星球_AR合照.png">儲存照片</a>
+        <button id="againBtn">再拍一次</button>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
